@@ -12,7 +12,7 @@ cd datasets/
 array=("10XPUZo8qb1ILF5_Z17AAODbrKX3_h4wL" "1pWH2xPVZFymxeJUrd6gF37qYbvmhh32s" "1NmlzPqOGiGaYbzfRi_12r2BjmKfGP3Hw")
 for item in "${array[@]}"; do
     echo $item
-    wget --load-cookies /tmp/cookies.txt "https://drive.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://drive.google.com/uc?export=download&id=${fileid}' -O- | sed -rn 's/.confirm=([0-9A-Za-z_]+)./\1\n/p')&id=${fileid}" && rm -rf /tmp/cookies.txt    
+    wget --load-cookies /tmp/cookies.txt "https://drive.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://drive.google.com/uc?export=download&id=${item}' -O- | sed -rn 's/.confirm=([0-9A-Za-z_]+)./\1\n/p')&id=${item}" && rm -rf /tmp/cookies.txt    
 done
 
 # Unzip
